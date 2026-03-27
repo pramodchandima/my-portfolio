@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Pramod Chandima | Web Developer Portfolio</title>
+  <meta name="description"
+    content="Pramod Chandima — Computer Science Undergraduate & Web Developer. Building modern, responsive websites and full-stack web applications. Available for freelance projects.">
+
+  <!-- Preconnect to CDN origins for faster DNS + TLS -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="dns-prefetch" href="https://api.web3forms.com">
+
+  <!-- Critical CSS first -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome — non-blocking load -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  </noscript>
+
+  <!-- AOS animations — non-blocking -->
+  <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  </noscript>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+
+  <!-- Heavy 3D libraries — deferred, loaded only if needed -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js" defer></script>
+
+</head>
+
+<body class="dark bg-slate-900 text-slate-100 font-sans antialiased relative overflow-x-hidden">
+  <div id="threejs-canvas-container"></div>
+  <div id="p5js-canvas-container"></div>
+
+  <div id="formFeedback"></div>
+
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo neon-text">PC</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#why-me">Why Me</a></li>
+        <li><a href="#tech-stack">Tech Stack</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="relative z-10">
+    <section id="home" class="hero">
+      <div class="hero-bg-pattern"></div>
+      <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
+        <div class="hero-flex-container">
+          <div class="hero-text-content">
+            <span class="hero-greeting">Hi, I'm Pramod Chandima.</span>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 neon-text">Make Your Ideas with Us.<br><span
+                class="hero-highlight">Digital Reality.</span></h1>
+            <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-2xl">A passionate Computer Science Undergraduate and
+              Web
+              Developer dedicated to building modern, functional, and user-centric digital experiences.</p>
+            <div class="cta-group">
+              <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+              <a href="#about" class="btn btn-outline">Explore Work</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <video autoplay loop muted playsinline class="hero-gif">
+              <source src="images/gif1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">About Me</h2>
+        <div class="about-grid">
+          <div class="about-image" data-aos="fade-right" data-aos-delay="100">
+            <div class="relative group">
+              <video autoplay loop muted playsinline poster="images/gif3.jpg"
+                class="w-full max-w-[350px] h-[400px] object-cover rounded-[30px] neon-border transition-transform duration-300 group-hover:scale-105"
+                width="350" height="400">
+                <source src="images/gif3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div
+                class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[30px]">
+                <span class="text-xl font-bold text-white uppercase tracking-wider"></span>
+              </div>
+            </div>
+          </div>
+          <div class="about-text" data-aos="fade-left" data-aos-delay="200">
+            <p>I am a Computer Science Undergraduate at Uva Wellassa University of Sri Lanka, driven by a deep interest
+              in software engineering and web technologies. With a solid foundation in academic principles and a
+              hands-on approach to coding, I bridge the gap between complex ideas and seamless digital solutions.</p>
+            <p>My experience spans across developing e-commerce platforms, lifestyle web stores, and desktop management
+              systems. I pride myself on writing clean, efficient code and creating designs that are not only visually
+              appealing but also highly functional. Whether you are a small business looking for a web presence or an
+              entrepreneur with a big idea, I am here to help you bring your vision to life.</p>
+            <a href="#" class="btn btn-primary download-cv" id="downloadCV">
+              <i class="fas fa-download"></i> Download CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">What I Offer</h2>
+        <div class="services-grid">
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+            <i class="fas fa-code"></i>
+            <h3>Full-Stack Web Development</h3>
+            <p>Custom-built websites and web applications tailored to your business goals. I specialize in building
+              robust systems using modern frameworks like React, Node.js, and PHP.</p>
+          </div>
+
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+            <i class="fas fa-boxes"></i>
+            <h3>Product Catalog & Inventory</h3>
+            <p>Digital solutions to showcase your products effectively. I build custom admin panels where you can easily
+              manage products, categories, and descriptions.</p>
+          </div>
+
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Responsive & Mobile-First</h3>
+            <p>Websites that look stunning and function perfectly on every device—desktops, tablets, and smartphones.
+              Guaranteed 100% mobile-friendly layouts.</p>
+          </div>
+
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+            <i class="fas fa-paint-brush"></i>
+            <h3>UI/UX Strategy & Prototyping</h3>
+            <p>User-centric designs focused on intuitive navigation and engagement. I bridge the gap between complex
+              functionality and a clean, aesthetic interface.</p>
+          </div>
+
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="500">
+            <i class="fas fa-rocket"></i>
+            <h3>Performance & SEO</h3>
+            <p>Lightning-fast loading speeds and search-engine-friendly code to ensure your website ranks higher on
+              Google and provides a smooth user experience.</p>
+          </div>
+
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="600">
+            <i class="fas fa-tools"></i>
+            <h3>Maintenance & Support</h3>
+            <p>Regular updates, performance checks, and bug fixes to keep your digital presence secure and up-to-date at
+              all times.</p>
+          </div>
+
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="700">
+            <i class="fas fa-lightbulb"></i>
+            <h3>Strategic Tech Consultation</h3>
+            <p>Guiding businesses to choose the right technology stack for long-term scalability, security, and
+              sustainable future growth.</p>
+          </div>
+
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="800">
+            <i class="fas fa-database"></i>
+            <h3>Database Design & Management</h3>
+            <p>Architecting secure, efficient database structures to handle complex business data and user information
+              with high performance.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">My Professional Journey</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50">Throughout my journey as a developer, I have
+          successfully delivered diverse projects, including:</p>
+        <div class="projects-grid">
+          <div class="project-card group" data-aos="flip-left" data-aos-delay="100">
+            <div class="project-img bg-slate-800 relative overflow-hidden">
+              <img src="images/MobileHub design.png" alt="Mobile HUB Project" loading="lazy" decoding="async"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="img-overlay">
+                <div class="overlay-text">Double click to view</div>
+              </div>
+            </div>
+            <div class="project-content flex flex-col h-full">
+              <h3 class="text-cyan-400">Mobile HUB</h3>
+              <p>A retail showcase for a mobile shop providing detailed product and service information. Includes an
+                efficient admin dashboard for content management.</p>
+              <ul class="project-features">
+                <li><i class="fas fa-check"></i> Admin Dashboard</li>
+                <li><i class="fas fa-check"></i> Service Showcase</li>
+                <li><i class="fas fa-check"></i> Responsive Design</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-card group" data-aos="flip-left" data-aos-delay="200">
+            <div class="project-img bg-slate-800 relative overflow-hidden">
+              <img src="images/FashonHub design.png" alt="Fashion HUB Project" loading="lazy" decoding="async"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="img-overlay">
+                <div class="overlay-text">Double click to view</div>
+              </div>
+            </div>
+            <div class="project-content flex flex-col h-full">
+              <h3 class="text-purple-400">Fashion HUB</h3>
+              <p>A modern clothing store featuring WhatsApp-based ordering and direct email contact. Managed through a
+                dedicated admin panel.</p>
+              <ul class="project-features">
+                <li><i class="fas fa-check"></i> WhatsApp Ordering</li>
+                <li><i class="fas fa-check"></i> Admin Panel</li>
+                <li><i class="fas fa-check"></i> Responsive Design</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-card group" data-aos="flip-left" data-aos-delay="300">
+            <div class="project-img bg-slate-800 relative overflow-hidden">
+              <img src="images/TourManagement design.png" alt="Tour Management Project" loading="lazy" decoding="async"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="img-overlay">
+                <div class="overlay-text">Double click to view</div>
+              </div>
+            </div>
+            <div class="project-content flex flex-col h-full">
+              <h3 class="text-teal-400">Tour Management System</h3>
+              <p>Python-based desktop software for tracking tours and payments. Manages drivers, companies, and vehicle
+                data with automated reporting.</p>
+              <ul class="project-features">
+                <li><i class="fas fa-check"></i> Payment Tracking</li>
+                <li><i class="fas fa-check"></i> Excel/PDF Reports</li>
+                <li><i class="fas fa-check"></i> Sorting & Filtering</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p class="projects-footer" data-aos="fade-up">I am constantly learning and adapting to the latest industry
+          trends to ensure my clients receive cutting-edge results.</p>
+      </div>
+    </section>
+
+    <section id="why-me">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Why Choose Me?</h2>
+        <div class="why-grid">
+          <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="why-icon"><i class="fas fa-graduation-cap"></i></div>
+            <h3>Academic Excellence</h3>
+            <p class="text-justify">Where theoretical foundations meet real-world implementation. I bridge the gap
+              between academic rigor and
+              practical innovation, delivering solutions that are both intellectually sound and commercially viable.
+              Every project is built on proven methodologies, ensuring reliability, scalability, and future-proof
+              architecture. My approach combines deep research with hands-on execution, resulting in code that is not
+              just functional but optimized for performance, maintainability, and long-term success.</p>
+            <div class="mt-6 flex justify-center gap-4 text-4xl text-cyan-400/60">
+              <i class="fas fa-microscope"></i>
+              <i class="fas fa-book-reader"></i>
+              <i class="fas fa-brain"></i>
+            </div>
+          </div>
+          <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="why-icon"><i class="fas fa-code"></i></div>
+            <h3>Modern Technology Stack</h3>
+            <p class="text-justify">Mastery across the full development spectrum enables me to build complete,
+              integrated solutions:</p>
+            <div class="mt-4 space-y-4 text-left text-sm text-slate-300">
+              <div class="flex items-start gap-3 text-justify">
+                <i class="fas fa-laptop-code text-cyan-400 mt-1"></i>
+                <span><strong>Frontend Excellence:</strong> Crafting responsive, interactive interfaces with HTML5,
+                  CSS3, JavaScript, and React — delivering seamless user experiences that captivate and convert. I
+                  create pixel-perfect designs that work flawlessly across all devices and browsers.</span>
+              </div>
+              <div class="flex items-start gap-3 text-justify">
+                <i class="fas fa-server text-purple-400 mt-1"></i>
+                <span><strong>Backend Authority:</strong> Building robust, scalable server-side applications with
+                  Node.js, Python, Java, and C — ensuring performance, security, and reliability at scale. From RESTful
+                  APIs to microservices architecture, I engineer systems that handle traffic efficiently.</span>
+              </div>
+              <div class="flex items-start gap-3 text-justify">
+                <i class="fas fa-database text-teal-400 mt-1"></i>
+                <span><strong>Data Mastery:</strong> Leveraging SQL for efficient database design, complex query
+                  optimization, and data integrity — turning raw information into actionable insights that drive
+                  business decisions.</span>
+              </div>
+            </div>
+            <div class="mt-6 flex flex-wrap justify-center gap-4 text-2xl text-slate-400">
+              <i class="fab fa-html5 hover:text-orange-500" title="HTML5"></i>
+              <i class="fab fa-css3-alt hover:text-blue-500" title="CSS3"></i>
+              <i class="fab fa-js hover:text-yellow-400" title="JavaScript"></i>
+              <i class="fab fa-react hover:text-cyan-400" title="React"></i>
+              <i class="fab fa-node-js hover:text-green-500" title="Node.js"></i>
+              <i class="fab fa-python hover:text-yellow-500" title="Python"></i>
+              <i class="fab fa-java hover:text-red-500" title="Java"></i>
+              <i class="fas fa-database hover:text-blue-500" title="SQL"></i>
+            </div>
+          </div>
+          <div class="why-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="why-icon"><i class="fas fa-heart"></i></div>
+            <h3>Client-Centric Philosophy</h3>
+            <p class="text-justify">Your success is my mission. I don't just write code — I solve business problems.
+              Every solution is
+              meticulously crafted to align with your unique objectives, market demands, and growth trajectory. From
+              initial consultation to final deployment, I ensure deep understanding of your business needs, transparent
+              communication with regular updates, scalable solutions that grow with your business, and comprehensive
+              post-launch support. I partner with you to achieve your vision, ensuring every feature delivers measurable
+              value.</p>
+            <div class="mt-6 flex justify-center gap-4 text-4xl text-purple-400/60">
+              <i class="fas fa-handshake"></i>
+              <i class="fas fa-chart-line"></i>
+              <i class="fas fa-rocket"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tech-stack">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Tech Stack & Tools</h2>
+        <div class="tech-grid" id="techGrid"></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-form-container" data-aos="fade-right" data-aos-delay="100">
+            <h3 class="text-2xl font-bold mb-6 text-cyan-400 text-center">Send Me a Message</h3>
+            <form id="contactForm" class="contact-form">
+              <input type="hidden" name="access_key" value="e1d48ab1-daa3-4543-b4d3-a084418f12f1">
+              <input type="hidden" name="subject" value="New Portfolio Message!">
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+              <div class="form-group mb-4">
+                <input type="text" id="name" name="name" placeholder="Your Name" class="w-full" required>
+              </div>
+              <div class="form-group mb-4">
+                <input type="email" id="email" name="email" placeholder="Email Address" class="w-full" required>
+              </div>
+              <div class="form-group mb-4">
+                <textarea id="message" name="message" placeholder="Tell me about your project..." rows="5"
+                  class="w-full" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-full">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane ml-2"></i>
+              </button>
+            </form>
+          </div>
+
+          <div class="contact-info text-center" data-aos="fade-left" data-aos-delay="200">
+            <h2 class="section-title">Let's Talk!</h2>
+            <p class="text-lg text-slate-300 mb-8">Have a project in mind? Let's discuss how we can bring your vision to
+              life.</p>
+
+            <div class="flex justify-center gap-4 mb-8">
+              <a href="mailto:chandimapramod6@gmail.com" class="social-icon" title="Email"><i
+                  class="fas fa-envelope"></i></a>
+              <a href="https://github.com/pramodchandima" target="_blank" class="social-icon" title="GitHub"><i
+                  class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/pramod-fernando-7bb688299/" target="_blank" class="social-icon"
+                title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://wa.me/94702913774" target="_blank" class="social-icon" title="WhatsApp"><i
+                  class="fab fa-whatsapp"></i></a>
+              <a href="tel:+94702913774" class="social-icon" title="Call Me"><i class="fas fa-phone-alt"></i></a>
+            </div>
+
+            <p class="text-slate-400 font-mono text-xl text-center"><i class="fas fa-phone mr-2 text-cyan-400"></i> +94
+              702913774
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p-10 border-t border-slate-800">
+    <div class="container footer-content text-center">
+      <p>© 2026 Pramod Chandima. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="image-modal" id="imageModal">
+    <div class="modal-close" id="modalClose">&times;</div>
+    <img src="" alt="Fullscreen Project Image" class="modal-content" id="modalImage">
+  </div>
+
+  <!-- AOS.init is called inside script.js after DOMContentLoaded -->
+  <script src="script.js" defer></script>
+</body>
+
+</html>
