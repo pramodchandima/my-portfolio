@@ -179,16 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ------------------------------
   const downloadBtn = document.getElementById('downloadCV');
   if (downloadBtn) {
-    downloadBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const cvContent = `Pramod Chandima\nComputer Science Student\nContact: chandimapramod6@gmail.com`;
-      const blob = new Blob([cvContent], { type: 'text/plain' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'Pramod_Chandima_CV.txt';
-      a.click();
-      URL.revokeObjectURL(url);
+    downloadBtn.addEventListener('click', () => {
       showFeedback('✅ CV download started!', 'success');
     });
   }
