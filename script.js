@@ -326,4 +326,19 @@ document.addEventListener('DOMContentLoaded', () => {
     imageModal.addEventListener('click', (e) => { if (e.target === imageModal) closeModal(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
   }
+
+  // ------------------------------
+  // 9. Disable Image Context Menu & Drag
+  // ------------------------------
+  document.addEventListener('contextmenu', (e) => {
+    if (e.target.tagName === 'IMG' || e.target.classList.contains('profile-image-overlay')) {
+      e.preventDefault();
+    }
+  });
+
+  document.addEventListener('dragstart', (e) => {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+    }
+  });
 });

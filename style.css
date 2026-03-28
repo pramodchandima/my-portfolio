@@ -385,7 +385,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Container */
+/* Image Protection */
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+}
+
+.profile-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: transparent;
+  border-radius: 50%;
+}
+
 .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -625,15 +642,49 @@ body {
   position: relative;
 }
 
-.hero-gif {
-  max-width: 100%;
-  height: auto;
-  mix-blend-mode: screen;
-  /* Shift any colors to neon cyan (#06b6d4) */
-  filter: brightness(0.8) contrast(1.2) sepia(1) hue-rotate(155deg) saturate(800%);
-  mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.778) 40%, transparent 50%);
-  -webkit-mask-image: radial-gradient(circle, black 20%, transparent 60%);
-  opacity: 0.95;
+.profile-image-container {
+  width: 350px;
+  height: 350px;
+  position: relative;
+  border-radius: 50%;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  animation: neon-breathing 4s ease-in-out infinite;
+  box-shadow: 0 0 20px var(--neon-cyan), inset 0 0 20px var(--neon-cyan);
+  border: 4px solid var(--neon-cyan);
+  transition: transform 0.3s ease;
+}
+
+.profile-image-container:hover {
+  transform: scale(1.05);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  display: block;
+}
+
+@keyframes neon-breathing {
+
+  0%,
+  100% {
+    box-shadow: 0 0 15px var(--neon-cyan), inset 0 0 10px var(--neon-cyan);
+    border-color: rgba(6, 182, 212, 0.4);
+    filter: brightness(0.9);
+  }
+
+  50% {
+    box-shadow: 0 0 40px var(--neon-cyan), inset 0 0 25px var(--neon-cyan);
+    border-color: rgba(6, 182, 212, 1);
+    filter: brightness(1.2);
+  }
 }
 
 @media (max-width: 968px) {
@@ -647,8 +698,10 @@ body {
     margin: 0 auto;
   }
 
-  .hero-gif {
-    max-width: 80%;
+  .profile-image-container {
+    width: 280px;
+    height: 280px;
+    margin: 0 auto;
   }
 }
 
